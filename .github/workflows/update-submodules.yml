@@ -1,0 +1,28 @@
+name: Update Submodules
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "common-components/**" # Adjust the path as needed
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Initialize and update submodules
+        run: |
+          git submodule init
+          git submodule update --remote --recursive
+
+      - name: Commit and push updated submodules
+        run: |
+          git config user.name "ujjawal.preplaced"
+          git config user.email "ujjawal.sharma@preplaced.in"
+          git add .
+          git commit -m "Update submodules"
+          git push
