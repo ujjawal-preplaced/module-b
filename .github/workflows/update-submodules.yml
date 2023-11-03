@@ -1,10 +1,9 @@
 name: Update Submodules
 
 on:
-  workflow_dispatch:
-  push:
-    paths:
-      - "https://github.com/ujjawal-preplaced/module-c/tree/main" # Adjust the path as needed
+  repository_dispatch:
+    types:
+      - submodule-push
 
 jobs:
   update:
