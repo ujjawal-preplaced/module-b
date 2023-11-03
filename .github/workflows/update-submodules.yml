@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "common-components/**" # Adjust the path as needed
+      - "https://github.com/ujjawal-preplaced/module-c/tree/main" # Adjust the path as needed
 
 jobs:
   update:
